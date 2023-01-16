@@ -2,48 +2,317 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-	<link rel="canonical" href="mostafaramadan.yoo7.com" />
+        <title>OPsHaN - أوبشن</title>
 	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 	<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Tajawal'>
-	<script src="script.js"></script>	
-	<link rel="stylesheet" type="text/css" href="style.css" />
-	<title>Windows Template</title>
+	<script src="https://dl.dropboxusercontent.com/s/qgxgu3l47ps7tl2/script.js"></script>	
+	<link rel="stylesheet" type="text/css" href="https://dl.dropboxusercontent.com/s/ikqpu8gqzc8na35/style.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+
+<style>
+  
+img.grayscale {
+
+     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 1 0\'/></filter></svg>#grayscale");
+    -webkit-filter: grayscale(0%);
+   
+}
+
+img.grayscale:hover {
+     filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+ */
+    filter: gray; /* IE6-9 */
+    -webkit-filter: grayscale(100%); /* Chrome 19+ & Safari 6+ */
+    -webkit-transition: all .6s ease; /* Fade to color for Chrome and Safari */
+    -webkit-backface-visibility: hidden; /* Fix for transition flickering */
+}
+          
+          
+  .icon-large {
+  width: 220px;
+  height: 220px;
+  border-radius: 38px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+}
+
+.icon-clock {
+  overflow: hidden;
+  background: #;
+}
+
+.clock {
+  width: 192px;
+  height: 192px;
+  border-radius: 50%;
+  background: #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.clock ol {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  margin: 0;
+  padding: 0;
+}
+.clock ol li {
+  counter-increment: labelCounter;
+  position: absolute;
+  font-size: 1.25em;
+}
+.clock ol li:before {
+  font-family: "Helvetica";
+  content: counter(labelCounter) "";
+}
+.clock ol li:nth-child(1) {
+  right: 55px;
+  top: 20px;
+}
+.clock ol li:nth-child(2) {
+  right: 25px;
+  top: 50px;
+}
+.clock ol li:nth-child(3) {
+  right: 12px;
+  top: 85px;
+}
+.clock ol li:nth-child(4) {
+  right: 25px;
+  top: 125px;
+}
+.clock ol li:nth-child(5) {
+  right: 55px;
+  top: 150px;
+}
+.clock ol li:nth-child(6) {
+  right: 90px;
+  top: 160px;
+}
+.clock ol li:nth-child(7) {
+  right: 125px;
+  top: 150px;
+}
+.clock ol li:nth-child(8) {
+  right: 155px;
+  top: 125px;
+}
+.clock ol li:nth-child(9) {
+  right: 165px;
+  top: 85px;
+}
+.clock ol li:nth-child(10) {
+  right: 150px;
+  top: 50px;
+}
+.clock ol li:nth-child(11) {
+  right: 120px;
+  top: 20px;
+}
+.clock ol li:nth-child(12) {
+  right: 85px;
+  top: 10px;
+}
+
+@-webkit-keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+#hour {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -7px;
+  margin-left: -7px;
+}
+#hour:before, #hour:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+#hour:before {
+  width: 8px;
+  height: 65px;
+  border-radius: 4px;
+  background: #303030;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#min {
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: #303030;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+#min:before, #min:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+#min:before {
+  width: 6px;
+  height: 90px;
+  border-radius: 4px;
+  background: #303030;
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#sec {
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: #dd3e1c;
+  border: 2px solid #e13e1b;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-top: -4px;
+  margin-left: -4px;
+}
+#sec:before, #sec:after {
+  content: "";
+  display: block;
+  position: absolute;
+}
+#sec:before {
+  width: 2px;
+  height: 105px;
+  border-radius: 4px;
+  background: #e13e1b;
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+          
+          
+          
+</style>
 </head>
 <body>
 	<div id="desktop">
-		<div class="window closed" data-title="First">
-			Window content
-		</div>
-		<div class="window closed" data-title="Second">
-			Second Window
-		</div>
-		<div class="window closed" data-title="Third">
-			Third window starts closed
-		</div>
-		<div class="window" data-title="Welcome">
+          		<div class="window" data-title="Home">
 			<h1>Free Windows Template</h1>
 			<p>Minimize the windows to the taskbar, make them full screen or close them.</p>
 			<p>Drag the title bar to move the windows or resize them from the bottom right corner.</p>
 			<hr />
+			<p><strong>Thanks</strong></p>
 		</div>
-		<div class="window closed" data-title="Forth">
+		<div class="window closed" data-title="Email">
+			Window contenta
+		</div>
+		<div class="window closed" data-title="Store">
+			Second Window
+		</div>
+		<div class="window closed" data-title="Gallery">
 			Third window starts closed
 		</div>
-		<div id="taskbar">		
+                <div class="window closed"  data-title="About us">
+			Third window starts closed
+		</div>
+		<div id="taskbar">
+                  <span><i class="fab fa-windows fa-1x"></i></span>
 		</div>
 		
 		<div id="icons">
-			<a class="openWindow" data-id="0">Open first</a>
-			<a class="openWindow" data-id="1">Open second</a>
-			<a class="openWindow" data-id="2">Open third</a>
-			<a class="openWindow" data-id="3">Welcome screen</a>
-			<a class="openWindow" data-id="4">Open Forth</a>
+                        <img  class="grayscale" src="https://i.servimg.com/u/f94/16/43/43/79/full-o10.png" alt="OPSHAN" width="250px"/>
+                        <a class="openWindow" data-id="0"><i class="fas fa-home fa-3x" aria-hidden="true"></i>Home</a>
+			<a class="openWindow" data-id="1"><i class="fa fa-envelope fa-3x" aria-hidden="true"></i>Email</a>
+			<a class="openWindow" data-id="2"><i class="fas fa-store-alt fa-3x" aria-hidden="true"></i>Store</a>
+			<a class="openWindow" data-id="3"><i class="fas fa-images fa-3x" aria-hidden="true"></i>Gallery</a>
+			<a class="openWindow" data-id="4"><i class="fas fa-edit fa-3x" aria-hidden="true"></i>About us</a>
 		</div>
-		<a href="https://https:mostafaramadan.yoo7.com/" rel="nofollow" target="_blank" id="templateLink">&copy; mostafaramadan.yoo7.com</a>	
+          <div id="widgets">
+
+            <div class="icon-large icon-clock">
+  <div class="clock">
+    <ol>
+      <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+    </ol>
+    <div id="hour"></div>
+    <div id="min"></div>
+    <div id="sec"></div>
+  </div>
+</div>
+    
+
+  
+      <script id="rendered-js" >
+
+window.requestAnimFrame = function () {
+  return window.requestAnimationFrame ||
+  window.webkitRequestAnimationFrame ||
+  window.mozRequestAnimationFrame ||
+  function (callback) {
+    window.setTimeout(callback, 1000 / 60);
+  };
+}();
+
+//initialize the clock in a self-invoking function
+(function clock() {
+  var hour = document.getElementById("hour"),
+  min = document.getElementById("min"),
+  sec = document.getElementById("sec");
+  //set up a loop
+  (function loop() {
+    requestAnimFrame(loop);
+    draw();
+  })();
+  //position the hands
+  function draw() {
+    var now = new Date(), //now
+    then = new Date(now.getFullYear(), now.getMonth(), now.getDate(), 0, 0, 0), //midnight
+    diffInMil = now.getTime() - then.getTime(), // difference in milliseconds
+    h = diffInMil / (1000 * 60 * 60), //hours
+    m = h * 60, //minutes
+    s = m * 60; //seconds
+    //rotate the hands accordingly
+    sec.style.webkitTransform = "rotate(" + s * 6 + "deg)";
+    hour.style.webkitTransform = "rotate(" + (h * 30 + h / 2) + "deg)";
+    min.style.webkitTransform = "rotate(" + m * 6 + "deg)";
+  }
+})();
+//# sourceURL=pen.js
+    </script>
+            
+          
+          </div>
 	</div>
 </body>
 
